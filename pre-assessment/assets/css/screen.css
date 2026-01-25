@@ -75,7 +75,7 @@ body {
 	color: #FFF;
 	height: 25px;
 }
-#footer h6 {
+#footer p {
 	font-size: 12px;
 	line-height: 25px;
 	margin-right: 20px;
@@ -84,8 +84,22 @@ body {
 
 .alert {
 	background:mediumorchid;
+	  color: white;
+	  padding: 10px;
 }
 
 h2,h3,h4 {
 	color:midnightblue;
+}
+
+#content h2 { color: midnightblue; }
+#content h3 { color: rebeccapurple; text-transform: uppercase; letter-spacing: 1px; }
+#content h4 { color: lightseagreen; }
+
+
+.content-img {
+  float: right;
+  margin: 10px;
+  border: 2px solid #333;
+  padding: 4px;
 }

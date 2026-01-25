@@ -1,0 +1,48 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Page layout */
+body {
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  background: #171717;
+  color: white;
+  text-align: center;
+  padding-top: 80px;
+}
+
+/* Name heading */
+h1 {
+  font-size: 3rem;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+/* Link styling */
+nav a {
+  text-decoration: none;
+  background: mediumorchid;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect */
+nav a:hover {
+  background: rebeccapurple;
+  transform: translateY(-2px);
+}

@@ -1,4 +1,4 @@
-/* This rule resets default browser margins and padding to create consistent spacing across browsers */
+/* Global Margin Reset - This rule resets default browser margins and padding to create consistent spacing across browsers */
 * {
 	margin: 0px;
 	padding: 0px;
@@ -22,8 +22,16 @@ body {
 	border: 1px solid #CCC;
 }
 #header {
+	background-image: url("../img/mask-head.webp");
+	background-repeat: repeat-x;
+	height: 140px;
 }
 #header h1 a {
+	display:block;
+	height:140px;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow:hidden;
 }
 #nav {
 	background-color: #000;
@@ -72,4 +80,12 @@ body {
 	line-height: 25px;
 	margin-right: 20px;
 	margin-left: 20px;
+}
+
+.alert {
+	background:mediumorchid;
+}
+
+h2,h3,h4 {
+	color:midnightblue;
 }

@@ -1,17 +1,71 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h1>Patricia Frogoso</h1>
-    <nav>
-        <ul>
-            <li><a href="pre-assessment/index.html">Pre Assessment</a></li>
-        </ul>
-    </nav>
-</body>
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Patricia Frogoso | Course Home</title>
+    <meta
+      name="description"
+      content="Course homepage for Patricia Frogoso: links to assignments and projects."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- You can add a favicon later if you want -->
+    <!-- <link rel="icon" href="favicon.ico" sizes="any"> -->
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header">
+      <div class="container">
+        <p class="kicker">Web Design & Development</p>
+        <h1 class="site-title">Patricia Frogoso</h1>
+        <p class="subtitle">Course Homepage</p>
+      </div>
+    </header>
+
+    <main id="main" class="container">
+      <section class="card">
+        <h2>Assignments</h2>
+        <p class="hint">Quick links so my work is easy to find:</p>
+
+        <nav aria-label="Course links">
+          <ul class="link-list">
+            <li>
+              <a class="link-item" href="pre-assessment/index.html">
+                <span class="link-title">Pre-Assessment</span>
+                <span class="link-desc">Original submission</span>
+              </a>
+            </li>
+            <li>
+              <a class="link-item" href="html5-semantics-review/index.html">
+                <span class="link-title">HTML5 Refactor</span>
+                <span class="link-desc">Semantics review (in-class refactor)</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+
+      <section class="card">
+        <h2>About</h2>
+        <p>
+          Hello World!
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="year"></span> Patricia Frogoso</p>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>

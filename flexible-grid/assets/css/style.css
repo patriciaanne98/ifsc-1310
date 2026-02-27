@@ -1,0 +1,79 @@
+/* =========================================
+   16 COLUMN GRID SYSTEM
+   -----------------------------------------
+   Total Columns: 16
+   1 column = 100% / 16 = 6.25%
+
+   Layout:
+   Blog    = 11 columns (68.75%)
+   Gap     = 1 column  (6.25%)
+   Sidebar = 4 columns (25%)
+
+   11 + 1 + 4 = 16 columns (100%)
+========================================= */
+
+/* Box sizing reset */
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* Clearfix */
+main::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* ===== MAIN CONTAINER ===== */
+main {
+  background-image: url("../img/grid-16.png"); /* downloaded grid */
+  background-repeat: repeat;
+
+  width: 80vw;
+  max-width: 1140px;
+  margin: 20px auto;
+  border: 1px solid #000;
+
+  /* outer gutter */
+  padding: 2.0833%;
+}
+
+/* ===== HEADER + FOOTER ===== */
+header.primary,
+footer.primary {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  float: left;
+}
+
+/* spacing between stacked elements */
+header.primary {
+  margin-bottom: 2.0833%;
+}
+
+footer.primary {
+  margin-top: 2.0833%;
+}
+
+/* ===== BLOG (11 columns) ===== */
+#blog {
+  width: 68.75%;        /* 11 / 16 */
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  float: left;
+}
+
+/* ===== SIDEBAR (4 columns) + GAP (1 column) ===== */
+aside {
+  width: 25%;           /* 4 / 16 */
+  margin-left: 6.25%;   /* 1 / 16 gap */
+  background: rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  float: left;
+}

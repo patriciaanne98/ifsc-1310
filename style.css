@@ -74,43 +74,47 @@ body {
   list-style: none;
   padding: 0;
   margin: 0;
+
   display: grid;
-  gap: 12px;
+  gap: 16px;
+
+  /* Responsive by default */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
 .link-item {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 14px;
-  padding: 14px 16px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+
+  padding: 16px 18px;
   border-radius: 14px;
   text-decoration: none;
+
   border: 1px solid rgba(148, 163, 184, 0.55);
   background: #ffffff;
-  transition: transform 160ms ease, box-shadow 160ms ease,
-    border-color 160ms ease;
+
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+  min-height: 84px; /* makes all cards feel even */
 }
 
 .link-item:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 10px 18px rgba(15, 23, 42, 0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 22px rgba(15, 23, 42, 0.14);
   border-color: rgba(99, 102, 241, 0.55);
 }
 
-.link-item:focus-visible {
-  outline: 3px solid rgba(99, 102, 241, 0.65);
-  outline-offset: 2px;
-}
-
 .link-title {
-  font-weight: 700;
-  color: #111827; /* gray-900 */
+  font-weight: 800;
+  color: #111827;
+  font-size: 1.05rem;
+  line-height: 1.2;
 }
 
 .link-desc {
-  color: #64748b; /* slate-500 */
+  color: #64748b;
   font-size: 0.95rem;
+  line-height: 1.2;
 }
 
 /* ---------- Footer ---------- */
@@ -135,4 +139,23 @@ body {
 
 .skip-link:focus {
   left: 12px;
+}
+
+/* =========================================
+   MEDIA QUERIES (codecast practice)
+   Max-width, ranged, min-width
+========================================= */
+
+/* ✅ Max-width query: phones (<=600px) -> 1 column */
+@media screen and (max-width: 600px) {
+  .link-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ✅ Ranged query: tablets (601–800px) -> 2 columns */
+@media screen and (min-width: 601px) and (max-width: 800px) {
+  .link-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

@@ -1,80 +1,112 @@
-/* ==========================
-   Base Reset
-========================== */
+/* ==========================================
+   CSS GRID REFACTOR
+   - Header full width
+   - Blog + Sidebar layout
+   - Even spacing everywhere
+   - Responsive mobile stack
+========================================== */
+
+/* Box sizing reset */
 html { box-sizing: border-box; }
 *, *::before, *::after { box-sizing: inherit; }
 
-/* ==========================
-   Main Container
-========================== */
+/* Remove default body margin */
+body { margin: 0; }
+
+/* ==========================================
+   MAIN CONTAINER
+========================================== */
 main.container {
+
+  /* Grid overlay image (for assignment) */
   background-image: url("../img/grid-16.png");
-  background-repeat: repeat;
+  background-repeat: repeat-y;
+  background-position: left top;
+  background-size: 100% auto;
 
   width: 80vw;
   max-width: 1140px;
   margin: 20px auto;
+
   border: 1px solid #000;
 
-  padding: 2.0833%;
+  /* Even outer spacing */
+  padding: 24px;
+
+  /* Page layout */
+  display: grid;
+  gap: 24px; /* consistent spacing between header/content/footer */
 }
 
-/* ==========================
-   Header + Footer
-========================== */
+/* ==========================================
+   HEADER + FOOTER
+========================================== */
 header.primary,
 footer.primary {
   background: rgba(0, 0, 0, 0.4);
   padding: 20px;
 }
 
-header.primary { margin-bottom: 2.0833%; }
-footer.primary { margin-top: 2.0833%; }
-
-/* ==========================
-   CSS GRID LAYOUT
-   Replaces 16-column float system
-========================== */
-
+/* ==========================================
+   CONTENT GRID (Blog + Sidebar)
+========================================== */
 #content {
   display: grid;
 
-  /* Create a real 16-column grid */
-  grid-template-columns: repeat(16, 1fr);
+  /* Blog larger, Sidebar smaller */
+  grid-template-columns: 11fr 4fr;
 
-  gap: 20px;
+  /* EVEN spacing between them */
+  column-gap: 24px;
+
   align-items: start;
 }
 
-/* Blog spans 11 columns */
+/* Blog column */
 #blog {
-  grid-column: 1 / span 11;
-
+  grid-column: 1;
   background: rgba(0, 0, 0, 0.6);
   padding: 20px;
 }
 
-/* Sidebar spans last 4 columns
-   (column 12 is left empty naturally by spacing) */
-aside {
-  grid-column: 13 / span 4;
-
+/* Sidebar column */
+#content > aside {
+  grid-column: 2;
   background: rgba(0, 0, 0, 0.3);
   padding: 20px;
 }
 
-/* ==========================
-   Mobile Layout
-========================== */
+/* Remove old float behavior completely */
+header.primary,
+footer.primary,
+#blog,
+#content > aside {
+  float: none;
+  width: auto;
+  margin: 0;
+}
+
+/* Clean heading spacing */
+h1, h2, p { margin-top: 0; }
+
+/* ==========================================
+   MOBILE LAYOUT
+========================================== */
 @media (max-width: 900px) {
+
+  main.container {
+    width: 92vw;
+    padding: 18px;
+    gap: 18px;
+  }
 
   #content {
     grid-template-columns: 1fr;
+    row-gap: 18px;
   }
 
   #blog,
-  aside {
+  #content > aside {
     grid-column: 1;
   }
-
 }

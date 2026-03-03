@@ -1,0 +1,80 @@
+/* ==========================
+   Base Reset
+========================== */
+html { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: inherit; }
+
+/* ==========================
+   Main Container
+========================== */
+main.container {
+  background-image: url("../img/grid-16.png");
+  background-repeat: repeat;
+
+  width: 80vw;
+  max-width: 1140px;
+  margin: 20px auto;
+  border: 1px solid #000;
+
+  padding: 2.0833%;
+}
+
+/* ==========================
+   Header + Footer
+========================== */
+header.primary,
+footer.primary {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+}
+
+header.primary { margin-bottom: 2.0833%; }
+footer.primary { margin-top: 2.0833%; }
+
+/* ==========================
+   CSS GRID LAYOUT
+   Replaces 16-column float system
+========================== */
+
+#content {
+  display: grid;
+
+  /* Create a real 16-column grid */
+  grid-template-columns: repeat(16, 1fr);
+
+  gap: 20px;
+  align-items: start;
+}
+
+/* Blog spans 11 columns */
+#blog {
+  grid-column: 1 / span 11;
+
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+}
+
+/* Sidebar spans last 4 columns
+   (column 12 is left empty naturally by spacing) */
+aside {
+  grid-column: 13 / span 4;
+
+  background: rgba(0, 0, 0, 0.3);
+  padding: 20px;
+}
+
+/* ==========================
+   Mobile Layout
+========================== */
+@media (max-width: 900px) {
+
+  #content {
+    grid-template-columns: 1fr;
+  }
+
+  #blog,
+  aside {
+    grid-column: 1;
+  }
+
+}

@@ -1,0 +1,282 @@
+:root {
+  --main-bg-color: #efefef;
+  --primary-type-color: #222222;
+  --accent-color-1: #0e3a66;
+  --accent-color-2: #999999;
+  --card-bg: #ffffff;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  background: var(--main-bg-color);
+  color: var(--primary-type-color);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
+/* mobile-first design time width */
+.container {
+  width: 420px;
+  max-width: 100%;
+  margin: 0 auto;
+  background: var(--card-bg);
+}
+
+/* global links */
+a:link,
+a:visited {
+  color: var(--accent-color-1);
+}
+
+nav {
+  padding: 1px;
+}
+
+nav ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 20px 20px 0 20px;
+  margin: 0;
+}
+
+nav li {
+  list-style: none;
+}
+
+nav a:link,
+nav a:visited {
+  display: block;
+  padding: 8px 10px;
+  border: 1px solid #000;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.72em;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  transition: background-color 0.4s ease;
+}
+
+nav a:hover {
+  background: rgba(0, 0, 0, 0.95);
+}
+
+main {
+  padding: 1px 20px 24px;
+}
+
+main h1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  font-weight: 700;
+  font-size: 2rem;
+  color: var(--accent-color-1);
+  margin: 24px 0 18px;
+}
+
+main h1:before,
+main h1:after {
+  background-color: var(--accent-color-2);
+  content: "\a0";
+  flex-grow: 1;
+  height: 1px;
+  position: relative;
+  top: 0.77em;
+}
+
+main h1:before {
+  margin-right: 15px;
+}
+
+main h1:after {
+  margin-left: 15px;
+}
+
+section {
+  padding: 10px 0 18px;
+  border-bottom: 1px solid var(--accent-color-2);
+}
+
+section:last-of-type {
+  border-bottom: none;
+}
+
+h2 {
+  margin: 0 0 10px;
+  color: var(--accent-color-1);
+  font-size: 1.25rem;
+  text-transform: uppercase;
+}
+
+h3 {
+  margin: 12px 0 6px;
+  font-size: 1rem;
+}
+
+.bio img {
+  border: 1px solid #ddd;
+  margin-bottom: 16px;
+}
+
+.bio p {
+  margin-top: 0;
+}
+
+dl {
+  font-size: 0.9rem;
+  display: grid;
+  grid-template-columns: 8em 1fr;
+  margin: 20px 0;
+}
+
+dt {
+  font-weight: 700;
+  grid-column: 1;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--accent-color-2);
+}
+
+dd {
+  margin: 0;
+  grid-column: 2;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--accent-color-2);
+}
+
+dd span {
+  display: inline-block;
+}
+
+.related-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+}
+
+.related-links li {
+  margin: 0;
+}
+
+.related-links a {
+  display: block;
+  border: 1px solid var(--accent-color-2);
+  padding: 8px 14px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.75em;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  transition: background-color 0.4s ease;
+}
+
+.related-links a:hover {
+  background: rgba(0, 0, 0, 0.95);
+}
+
+.skills-list {
+  padding-left: 18px;
+  margin-top: 0;
+}
+
+#skills li {
+  margin-bottom: 6px;
+}
+
+.job,
+.certificate {
+  border-bottom: 1px solid var(--accent-color-2);
+  padding-bottom: 18px;
+  margin-bottom: 18px;
+}
+
+.job:last-child,
+.certificate:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.job *[itemprop="jobTitle"],
+.job *[itemprop="name"],
+.job *[itemprop="url"],
+.job *[itemprop="addressLocality"],
+.certificate *[itemprop="name"] {
+  display: block;
+}
+
+.job h3,
+.certificate h3 {
+  margin-top: 0;
+  color: #111;
+}
+
+footer {
+  text-align: center;
+  padding: 20px 0 30px;
+  font-size: 0.9rem;
+}
+
+/* reorder source using grid for mobile priority */
+main.container {
+  display: grid;
+  grid-template-areas:
+    "title"
+    "about"
+    "education"
+    "experience"
+    "skills";
+}
+
+.page-title {
+  grid-area: title;
+}
+
+#about {
+  grid-area: about;
+}
+
+#education {
+  grid-area: education;
+}
+
+#experience {
+  grid-area: experience;
+}
+
+#skills {
+  grid-area: skills;
+}

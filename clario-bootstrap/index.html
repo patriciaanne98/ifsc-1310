@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clario AI</title>
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <style>
+    .hero-section {
+      background:
+        linear-gradient(rgba(248, 249, 250, 0.9), rgba(248, 249, 250, 0.9)),
+        url("https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1400&q=80")
+        center/cover no-repeat;
+      min-height: 420px;
+      display: flex;
+      align-items: center;
+    }
+
+    .feature-section,
+    .example-section,
+    footer {
+      background: linear-gradient(135deg, #6f2cff, #7c3aed);
+    }
+
+    .cta-section {
+      background-color: #111;
+    }
+
+    .feature-img,
+    .example-img {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+    }
+
+    .example-card {
+      border-radius: 16px;
+    }
+
+    section {
+      scroll-margin-top: 90px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(135deg, #6f2cff, #7c3aed);">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="img/clario-logo.png" alt="Clario AI Logo" width="40" height="40" class="me-2" />
+        <span class="fw-bold">Clario AI</span>
+      </a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNav"
+        aria-controls="mainNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#tips">Tips</a>
+          </li>
+          <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+            <a class="btn btn-info text-white px-4" href="budget.html">Dashboard</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero-section text-center py-5">
+    <div class="container py-5">
+      <h1 class="display-4 fw-bold">Take Control of Your Money</h1>
+      <p class="lead mb-4">Simple budgeting tools designed for students</p>
+      <a href="budget.html" class="btn btn-primary btn-lg px-5">Start Budgeting</a>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="feature-section text-white py-5">
+    <div class="container">
+      <div class="row g-5 text-center align-items-start">
+        <div class="col-12 col-md-6 col-lg-4">
+          <img
+            class="feature-img mb-4"
+            src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=500&q=80"
+            alt="Jar savings"
+          />
+          <h3 class="fw-bold mt-3">Track Spending</h3>
+          <p class="mb-0">See where your money goes each month</p>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <img
+            class="feature-img mb-4"
+            src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=500&q=80"
+            alt="Writing a budget"
+          />
+          <h3 class="fw-bold mt-3">Set a Budget</h3>
+          <p class="mb-0">Plan your monthly expenses easily</p>
+        </div>
+
+        <div class="col-12 col-md-12 col-lg-4">
+          <img
+            class="feature-img mb-4"
+            src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=500&q=80"
+            alt="Charts and reports"
+          />
+          <h3 class="fw-bold mt-3">Stay Organized</h3>
+          <p class="mb-0">Keep track of bills and due dates</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tips -->
+  <section id="tips" class="py-5">
+    <div class="container">
+      <h2 class="fw-bold mb-4">Budgeting Tips for Students</h2>
+
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card bg-dark text-white h-100 shadow rounded-4">
+            <div class="card-body p-4">
+              <h3 class="h4">Tip 1:</h3>
+              <h4 class="h5 mt-3">Cut Unnecessary Subscriptions</h4>
+              <p class="mb-0 mt-3">Cancel apps you don’t use regularly</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card bg-dark text-white h-100 shadow rounded-4">
+            <div class="card-body p-4">
+              <h3 class="h4">Tip 2:</h3>
+              <h4 class="h5 mt-3">Track Every Expense</h4>
+              <p class="mb-0 mt-3">Even small purchases add up</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-12 col-lg-4">
+          <div class="card bg-dark text-white h-100 shadow rounded-4">
+            <div class="card-body p-4">
+              <h3 class="h4">Tip 3:</h3>
+              <h4 class="h5 mt-3">Set Weekly Limits</h4>
+              <p class="mb-0 mt-3">Stay within a fixed spending range</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Budget Examples -->
+  <section class="example-section py-5 text-white">
+    <div class="container">
+      <h2 class="fw-bold mb-4">Budget Examples</h2>
+
+      <div class="row g-4 text-center">
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card example-card h-100 shadow border-0">
+            <div class="card-body p-4">
+              <img
+                class="example-img mb-3"
+                src="https://cdn-icons-png.flaticon.com/512/3081/3081822.png"
+                alt="Groceries budget"
+              />
+              <h3 class="h6">Groceries Budget</h3>
+              <p class="mb-0">$200 / month</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card example-card h-100 shadow border-0">
+            <div class="card-body p-4">
+              <img
+                class="example-img mb-3"
+                src="https://cdn-icons-png.flaticon.com/512/25/25694.png"
+                alt="Rent budget"
+              />
+              <h3 class="h6">Rent Budget</h3>
+              <p class="mb-0">$800 / month</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card example-card h-100 shadow border-0">
+            <div class="card-body p-4">
+              <img
+                class="example-img mb-3"
+                src="https://cdn-icons-png.flaticon.com/512/3659/3659784.png"
+                alt="Entertainment budget"
+              />
+              <h3 class="h6">Entertainment</h3>
+              <p class="mb-0">$100 / month</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card example-card h-100 shadow border-0">
+            <div class="card-body p-4">
+              <img
+                class="example-img mb-3"
+                src="https://cdn-icons-png.flaticon.com/512/3135/3135706.png"
+                alt="Savings goal"
+              />
+              <h3 class="h6">Savings Goal</h3>
+              <p class="mb-0">$150 / month</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Budgeting Matters -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-5 align-items-center">
+        <div class="col-12 col-lg-6">
+          <h2 class="fw-bold mb-3">Why Budgeting Matters</h2>
+          <p class="mb-0">
+            Budgeting helps students stay in control of their finances,
+            avoid debt, and build better spending habits.
+          </p>
+        </div>
+
+        <div class="col-12 col-lg-6 text-center">
+          <img
+            src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=900&q=80"
+            class="img-fluid rounded shadow"
+            alt="Calculator and money"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section text-white text-center py-5">
+    <div class="container">
+      <h2 class="fw-bold">Start building your budget today.</h2>
+      <a href="budget.html" class="btn btn-primary btn-lg mt-3 px-4">Get Started</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-white text-center py-3">
+    <div class="container">
+      <p class="mb-0">Clario AI © 2026</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

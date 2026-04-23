@@ -12,89 +12,97 @@
 
   <style>
     body {
-      background-color: #f3f3f3;
+      background-color: #efefef;
+      color: #222;
     }
 
-    .brand-gradient {
-      background: linear-gradient(135deg, #6f2cff, #7c3aed);
+    .brand-bar {
+      background-color: #6f2cff;
     }
 
-    .section-space {
-      padding-top: 4rem;
-      padding-bottom: 4rem;
+    .nav-link,
+    .navbar-brand {
+      color: white !important;
+    }
+
+    .nav-link.active {
+      font-weight: 700;
+    }
+
+    .btn-brand {
+      background-color: #0d6efd;
+      border: none;
+      color: white;
+      border-radius: 999px;
+    }
+
+    .btn-brand:hover {
+      background-color: #0b5ed7;
+      color: white;
+    }
+
+    .page-header {
+      background-color: #f4f4f4;
+      padding: 60px 0;
     }
 
     .dashboard-card,
-    .summary-card,
+    .breakdown-card,
     .insight-card {
-      border: 0;
-      border-radius: 22px;
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+      background-color: white;
+      border-radius: 18px;
+      padding: 32px;
+      border: 1px solid #ddd;
     }
 
     .chart-circle {
-      width: 250px;
-      height: 250px;
+      width: 230px;
+      height: 230px;
       border-radius: 50%;
-      margin: 0 auto 2rem auto;
+      margin: 0 auto 30px auto;
       background: conic-gradient(
         #6f2cff 0% 45%,
-        #4cc9f0 45% 65%,
+        #43b6e8 45% 65%,
         #43aa8b 65% 85%,
-        #f72585 85% 100%
+        #f04fa1 85% 100%
       );
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
     }
 
     .legend-color {
       width: 14px;
       height: 14px;
-      border-radius: 4px;
       display: inline-block;
-      margin-right: 0.75rem;
+      border-radius: 3px;
+      margin-right: 10px;
     }
 
-    .legend-rent {
-      background-color: #6f2cff;
-    }
-
-    .legend-food {
-      background-color: #4cc9f0;
-    }
-
-    .legend-savings {
-      background-color: #43aa8b;
-    }
-
-    .legend-other {
-      background-color: #f72585;
-    }
+    .legend-rent { background-color: #6f2cff; }
+    .legend-food { background-color: #43b6e8; }
+    .legend-savings { background-color: #43aa8b; }
+    .legend-other { background-color: #f04fa1; }
 
     .summary-box {
-      background-color: #f8f9fa;
-      border-radius: 14px;
-      padding: 2rem 1rem;
+      background-color: #f5f5f5;
+      border-radius: 12px;
+      padding: 28px 16px;
       text-align: center;
       height: 100%;
     }
 
     footer {
-      background: linear-gradient(135deg, #6f2cff, #7c3aed);
-    }
-
-    section {
-      scroll-margin-top: 90px;
+      background-color: #6f2cff;
+      color: white;
     }
   </style>
 </head>
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark brand-gradient">
+  <nav class="navbar navbar-expand-lg brand-bar navbar-dark">
     <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="index.html">
-        <img src="img/clario-logo.png" alt="Clario AI Logo" width="40" height="40" class="me-2" />
-        <span class="fw-bold">Clario AI</span>
+      <a class="navbar-brand d-flex align-items-center fw-bold" href="index.html">
+        <img src="img/clario-logo.png" alt="Clario AI Logo" width="40" height="40" class="me-2">
+        Clario AI
       </a>
 
       <button
@@ -117,16 +125,16 @@
           <li class="nav-item">
             <a class="nav-link" href="index.html#tips">Tips</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="budget.html">Dashboard</a>
+          <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+            <a class="btn btn-brand px-4" href="budget.html">Dashboard</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Page Header -->
-  <section class="section-space bg-light text-center">
+  <!-- Header -->
+  <section class="page-header text-center">
     <div class="container">
       <h1 class="display-4 fw-bold">Build Your Monthly Budget</h1>
       <p class="lead mb-0">
@@ -135,77 +143,65 @@
     </div>
   </section>
 
-  <!-- Chart + Form -->
-  <section class="section-space">
+  <!-- Main Dashboard -->
+  <section class="py-5">
     <div class="container">
       <div class="row g-4">
 
         <!-- Chart -->
         <div class="col-12 col-lg-6">
-          <div class="card dashboard-card h-100">
-            <div class="card-body p-4 p-md-5">
-              <h2 class="fw-bold mb-4 text-center">Spending Overview</h2>
+          <div class="dashboard-card h-100">
+            <h2 class="fw-bold mb-4 text-center">Spending Overview</h2>
 
-              <div class="chart-circle"></div>
+            <div class="chart-circle"></div>
 
-              <div class="mx-auto" style="max-width: 320px;">
-                <p class="fs-5 mb-3">
-                  <span class="legend-color legend-rent"></span>Rent / Bills
-                </p>
-                <p class="fs-5 mb-3">
-                  <span class="legend-color legend-food"></span>Food
-                </p>
-                <p class="fs-5 mb-3">
-                  <span class="legend-color legend-savings"></span>Savings
-                </p>
-                <p class="fs-5 mb-0">
-                  <span class="legend-color legend-other"></span>Other Spending
-                </p>
-              </div>
+            <div class="mx-auto" style="max-width: 300px;">
+              <p class="fs-5 mb-3"><span class="legend-color legend-rent"></span>Rent / Bills</p>
+              <p class="fs-5 mb-3"><span class="legend-color legend-food"></span>Food</p>
+              <p class="fs-5 mb-3"><span class="legend-color legend-savings"></span>Savings</p>
+              <p class="fs-5 mb-0"><span class="legend-color legend-other"></span>Other Spending</p>
             </div>
           </div>
         </div>
 
         <!-- Form -->
         <div class="col-12 col-lg-6">
-          <div class="card dashboard-card h-100">
-            <div class="card-body p-4 p-md-5">
-              <h2 class="fw-bold mb-4">Enter Your Budget Info</h2>
+          <div class="dashboard-card h-100">
+            <h2 class="fw-bold mb-4">Enter Your Budget Info</h2>
 
-              <form>
-                <div class="mb-4">
-                  <label for="income" class="form-label fw-semibold fs-5">How much do you make?</label>
-                  <input type="text" class="form-control form-control-lg" id="income" placeholder="$1,200" />
-                </div>
+            <form>
+              <div class="mb-4">
+                <label for="income" class="form-label fw-semibold">How much do you make?</label>
+                <input type="text" class="form-control form-control-lg" id="income" placeholder="$1,200">
+              </div>
 
-                <div class="mb-4">
-                  <label for="balance" class="form-label fw-semibold fs-5">Current bank account balance</label>
-                  <input type="text" class="form-control form-control-lg" id="balance" placeholder="$850" />
-                </div>
+              <div class="mb-4">
+                <label for="balance" class="form-label fw-semibold">Current bank account balance</label>
+                <input type="text" class="form-control form-control-lg" id="balance" placeholder="$850">
+              </div>
 
-                <div class="mb-4">
-                  <label for="rent" class="form-label fw-semibold fs-5">Rent / Main bill</label>
-                  <input type="text" class="form-control form-control-lg" id="rent" placeholder="$800" />
-                </div>
+              <div class="mb-4">
+                <label for="rent" class="form-label fw-semibold">Rent / Main bill</label>
+                <input type="text" class="form-control form-control-lg" id="rent" placeholder="$800">
+              </div>
 
-                <div class="mb-4">
-                  <label for="food" class="form-label fw-semibold fs-5">Food budget</label>
-                  <input type="text" class="form-control form-control-lg" id="food" placeholder="$200" />
-                </div>
+              <div class="mb-4">
+                <label for="food" class="form-label fw-semibold">Food budget</label>
+                <input type="text" class="form-control form-control-lg" id="food" placeholder="$200">
+              </div>
 
-                <div class="mb-4">
-                  <label for="other" class="form-label fw-semibold fs-5">Other expenses</label>
-                  <input type="text" class="form-control form-control-lg" id="other" placeholder="$100" />
-                </div>
+              <div class="mb-4">
+                <label for="other" class="form-label fw-semibold">Other expenses</label>
+                <input type="text" class="form-control form-control-lg" id="other" placeholder="$100">
+              </div>
 
-                <div class="mb-4">
-                  <label for="savings" class="form-label fw-semibold fs-5">Savings goal</label>
-                  <input type="text" class="form-control form-control-lg" id="savings" placeholder="$150" />
-                </div>
+              <div class="mb-4">
+                <label for="savings" class="form-label fw-semibold">Savings goal</label>
+                <input type="text" class="form-control form-control-lg" id="savings" placeholder="$150">
+              </div>
 
-                <button type="button" class="btn btn-primary btn-lg px-4">Add Bill</button>
-              </form>
-            </div>
+              <button type="button" class="btn btn-brand px-4">Add Bill</button>
+            </form>
           </div>
         </div>
 
@@ -216,30 +212,28 @@
   <!-- Breakdown -->
   <section class="pb-5">
     <div class="container">
-      <div class="card summary-card">
-        <div class="card-body p-4 p-md-5">
-          <h2 class="fw-bold mb-4">Your Monthly Breakdown</h2>
+      <div class="breakdown-card">
+        <h2 class="fw-bold mb-4">Your Monthly Breakdown</h2>
 
-          <div class="row g-4">
-            <div class="col-12 col-md-4">
-              <div class="summary-box">
-                <h3 class="fw-bold">Monthly Income</h3>
-                <p class="display-6 mb-0">$1,200</p>
-              </div>
+        <div class="row g-4">
+          <div class="col-12 col-md-4">
+            <div class="summary-box">
+              <h3 class="h4 fw-bold">Monthly Income</h3>
+              <p class="display-6 mb-0">$1,200</p>
             </div>
+          </div>
 
-            <div class="col-12 col-md-4">
-              <div class="summary-box">
-                <h3 class="fw-bold">Total Bills</h3>
-                <p class="display-6 mb-0">$950</p>
-              </div>
+          <div class="col-12 col-md-4">
+            <div class="summary-box">
+              <h3 class="h4 fw-bold">Total Bills</h3>
+              <p class="display-6 mb-0">$950</p>
             </div>
+          </div>
 
-            <div class="col-12 col-md-4">
-              <div class="summary-box">
-                <h3 class="fw-bold">Remaining Balance</h3>
-                <p class="display-6 mb-0">$250</p>
-              </div>
+          <div class="col-12 col-md-4">
+            <div class="summary-box">
+              <h3 class="h4 fw-bold">Remaining Balance</h3>
+              <p class="display-6 mb-0">$250</p>
             </div>
           </div>
         </div>
@@ -250,27 +244,23 @@
   <!-- Insight -->
   <section class="pb-5">
     <div class="container">
-      <div class="card insight-card">
-        <div class="card-body p-4 p-md-5">
-          <h2 class="fw-bold mb-4">Budget Insight</h2>
-          <p class="fs-4 mb-0">
-            You are spending most of your money on rent and savings. Consider lowering your
-            entertainment or food spending to create more flexibility in your monthly budget.
-          </p>
-        </div>
+      <div class="insight-card">
+        <h2 class="fw-bold mb-3">Budget Insight</h2>
+        <p class="mb-0 fs-5">
+          You are spending most of your money on rent and savings. Consider lowering your
+          entertainment or food spending to create more flexibility in your monthly budget.
+        </p>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="text-white text-center py-3">
+  <footer class="py-3 text-center">
     <div class="container">
       <p class="mb-0">Clario AI © 2026</p>
     </div>
   </footer>
 
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-  ></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

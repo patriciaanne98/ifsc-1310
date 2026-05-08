@@ -13,39 +13,22 @@
 
   <nav class="navbar navbar-expand-lg brand-bar navbar-dark">
     <div class="container">
-
       <a class="navbar-brand d-flex align-items-center fw-bold" href="index.html">
         <img src="img/clario-logo.png" alt="Clario AI Logo" width="40" height="40" class="me-2">
         Clario AI
       </a>
 
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#mainNav"
-        aria-controls="mainNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav ms-auto align-items-lg-center">
-
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="index.html#tips">Tips</a>
-          </li>
-
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#tips">Tips</a></li>
           <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
             <a class="btn btn-brand px-4" href="budget.html">Dashboard</a>
           </li>
-
         </ul>
       </div>
     </div>
@@ -53,152 +36,71 @@
 
   <section class="page-header text-center">
     <div class="container">
-
-      <h1 class="display-4 fw-bold">
-        Build Your Monthly Budget
-      </h1>
-
+      <h1 class="display-4 fw-bold">Build Your Monthly Budget</h1>
       <p class="lead mb-0">
-        Enter your income, bills, and current balance to see a simple monthly breakdown.
+        Enter your income, bills, and spending goals to see how much money you have left.
       </p>
-
     </div>
   </section>
 
   <section class="py-5">
     <div class="container">
-
       <div class="row g-4">
 
         <div class="col-12 col-lg-6">
           <div class="dashboard-card h-100">
+            <h2 class="fw-bold mb-4 text-center">Spending Overview</h2>
 
-            <h2 class="fw-bold mb-4 text-center">
-              Spending Overview
-            </h2>
-
-            <div class="chart-circle"></div>
+            <div class="chart-circle" id="budgetChart"></div>
 
             <div class="legend-list mx-auto">
-
-              <p class="fs-5 mb-3">
-                <span class="legend-color legend-rent"></span>
-                Rent / Bills
-              </p>
-
-              <p class="fs-5 mb-3">
-                <span class="legend-color legend-food"></span>
-                Food
-              </p>
-
-              <p class="fs-5 mb-3">
-                <span class="legend-color legend-savings"></span>
-                Savings
-              </p>
-
-              <p class="fs-5 mb-0">
-                <span class="legend-color legend-other"></span>
-                Other Spending
-              </p>
-
+              <p class="fs-5 mb-3"><span class="legend-color legend-rent"></span>Rent / Bills</p>
+              <p class="fs-5 mb-3"><span class="legend-color legend-food"></span>Food</p>
+              <p class="fs-5 mb-3"><span class="legend-color legend-savings"></span>Savings</p>
+              <p class="fs-5 mb-0"><span class="legend-color legend-other"></span>Other Spending</p>
             </div>
-
           </div>
         </div>
 
         <div class="col-12 col-lg-6">
           <div class="dashboard-card h-100">
+            <h2 class="fw-bold mb-4">Enter Your Budget Info</h2>
 
-            <h2 class="fw-bold mb-4">
-              Enter Your Budget Info
-            </h2>
-
-            <form>
-
+            <form id="budgetForm">
               <div class="mb-4">
-                <label for="income" class="form-label fw-semibold">
-                  How much do you make?
-                </label>
-
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  id="income"
-                  placeholder="$1,200"
-                >
+                <label for="income" class="form-label fw-semibold">Monthly income</label>
+                <input type="number" class="form-control form-control-lg" id="income" placeholder="Example: 1200">
               </div>
 
               <div class="mb-4">
-                <label for="balance" class="form-label fw-semibold">
-                  Current bank account balance
-                </label>
-
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  id="balance"
-                  placeholder="$850"
-                >
+                <label for="balance" class="form-label fw-semibold">Current bank account balance</label>
+                <input type="number" class="form-control form-control-lg" id="balance" placeholder="Example: 850">
               </div>
 
               <div class="mb-4">
-                <label for="rent" class="form-label fw-semibold">
-                  Rent / Main bill
-                </label>
-
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  id="rent"
-                  placeholder="$800"
-                >
+                <label for="rent" class="form-label fw-semibold">Rent / main bills</label>
+                <input type="number" class="form-control form-control-lg" id="rent" placeholder="Example: 800">
               </div>
 
               <div class="mb-4">
-                <label for="food" class="form-label fw-semibold">
-                  Food budget
-                </label>
-
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  id="food"
-                  placeholder="$200"
-                >
+                <label for="food" class="form-label fw-semibold">Food budget</label>
+                <input type="number" class="form-control form-control-lg" id="food" placeholder="Example: 200">
               </div>
 
               <div class="mb-4">
-                <label for="other" class="form-label fw-semibold">
-                  Other expenses
-                </label>
-
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  id="other"
-                  placeholder="$100"
-                >
+                <label for="other" class="form-label fw-semibold">Other spending</label>
+                <input type="number" class="form-control form-control-lg" id="other" placeholder="Example: 100">
               </div>
 
               <div class="mb-4">
-                <label for="savings" class="form-label fw-semibold">
-                  Savings goal
-                </label>
-
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  id="savings"
-                  placeholder="$150"
-                >
+                <label for="savings" class="form-label fw-semibold">Savings goal</label>
+                <input type="number" class="form-control form-control-lg" id="savings" placeholder="Example: 150">
               </div>
 
-              <button type="button" class="btn btn-brand px-4">
-                Add Bill
+              <button type="submit" class="btn btn-brand px-4">
+                Calculate Budget
               </button>
-
             </form>
-
           </div>
         </div>
 
@@ -208,57 +110,30 @@
 
   <section class="pb-5">
     <div class="container">
-
       <div class="breakdown-card">
-
-        <h2 class="fw-bold mb-4">
-          Your Monthly Breakdown
-        </h2>
+        <h2 class="fw-bold mb-4">Your Monthly Breakdown</h2>
 
         <div class="row g-4">
-
           <div class="col-12 col-md-4">
             <div class="summary-box">
-
-              <h3 class="h4 fw-bold">
-                Monthly Income
-              </h3>
-
-              <p class="display-6 mb-0">
-                $1,200
-              </p>
-
+              <h3 class="h4 fw-bold">Monthly Income</h3>
+              <p class="display-6 mb-0">$<span id="incomeResult">0</span></p>
             </div>
           </div>
 
           <div class="col-12 col-md-4">
             <div class="summary-box">
-
-              <h3 class="h4 fw-bold">
-                Total Bills
-              </h3>
-
-              <p class="display-6 mb-0">
-                $950
-              </p>
-
+              <h3 class="h4 fw-bold">Total Planned Spending</h3>
+              <p class="display-6 mb-0">$<span id="billsResult">0</span></p>
             </div>
           </div>
 
           <div class="col-12 col-md-4">
             <div class="summary-box">
-
-              <h3 class="h4 fw-bold">
-                Remaining Balance
-              </h3>
-
-              <p class="display-6 mb-0">
-                $250
-              </p>
-
+              <h3 class="h4 fw-bold">Money Left</h3>
+              <p class="display-6 mb-0">$<span id="remainingResult">0</span></p>
             </div>
           </div>
-
         </div>
       </div>
     </div>
@@ -266,29 +141,24 @@
 
   <section class="pb-5">
     <div class="container">
-
       <div class="insight-card">
-
-        <h2 class="fw-bold mb-3">
-          Budget Insight
-        </h2>
-
-        <p class="mb-0 fs-5">
-          You are spending most of your money on rent and savings.
-          Consider lowering entertainment or food spending to create
-          more flexibility in your monthly budget.
+        <h2 class="fw-bold mb-3">Student Budget Insight</h2>
+        <p class="mb-3 fs-5" id="budgetInsight">
+          Enter your numbers above to get a simple student-friendly budget suggestion.
         </p>
 
+        <ul class="mb-0" id="budgetTips">
+          <li>Try to keep your fixed bills lower than your monthly income.</li>
+          <li>Set aside a small amount for savings, even if it is only $20.</li>
+          <li>Track food, subscriptions, and entertainment because those costs add up quickly.</li>
+        </ul>
       </div>
     </div>
   </section>
 
   <section class="music-section text-center py-4">
     <div class="container">
-
-      <p class="mb-3">
-        Need background music while reviewing your monthly budget?
-      </p>
+      <p class="mb-3">Need background music while reviewing your monthly budget?</p>
 
       <button class="btn btn-brand px-4" id="musicButton" type="button">
         Play Study Music
@@ -298,15 +168,12 @@
         <source src="audio/background-music.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
       </audio>
-
     </div>
   </section>
 
   <footer class="py-3 text-center">
     <div class="container">
-      <p class="mb-0">
-        Clario AI © 2026
-      </p>
+      <p class="mb-0">Clario AI © 2026</p>
     </div>
   </footer>
 

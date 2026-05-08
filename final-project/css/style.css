@@ -89,20 +89,27 @@ footer {
   background-color: var(--purple);
 }
 
-.example-card {
-  background-color: var(--white);
+.resource-card {
+  display: block;
+  background-color: white;
+  color: #222;
+  text-decoration: none;
   border-radius: 14px;
-  padding: 20px;
-  text-align: center;
+  padding: 24px;
   height: 100%;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 12px rgba(0,0,0,.08);
+  transition: transform .2s ease;
 }
 
-.example-icon {
+.resource-card:hover {
+  transform: translateY(-4px);
+  color: #222;
+}
+
+.resource-icon {
   width: 72px;
   height: 72px;
   object-fit: contain;
-  margin-bottom: 14px;
 }
 
 .why-video {

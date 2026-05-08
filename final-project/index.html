@@ -173,10 +173,20 @@
       <div class="row g-5 text-center">
         <div class="col-12 col-md-6 col-lg-4">
           <img
-            class="feature-img"
-            src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=500&q=80"
-            alt="Track spending"
-          >
+  class="feature-img"
+  src="img/money-calculator_medium.jpg"
+  srcset="
+    img/money-calculator_small.jpg 400w,
+    img/money-calculator_medium.jpg 800w,
+    img/money-calculator_large.jpg 1200w
+  "
+  sizes="
+    (max-width: 600px) 100vw,
+    (max-width: 1000px) 50vw,
+    300px
+  "
+  alt="Budget calculator"
+>
           <h3 class="fw-bold">Track Spending</h3>
           <p class="mb-0">See where your money goes each month</p>
         </div>

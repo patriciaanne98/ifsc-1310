@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML5 Audio and Video Demo</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #efefef;
+      color: #222;
+      margin: 0;
+      padding: 30px;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 12px;
+      border: 1px solid #ddd;
+    }
+
+    section {
+      margin-bottom: 35px;
+    }
+
+    video {
+      width: 100%;
+      max-width: 700px;
+      display: block;
+      margin-top: 15px;
+    }
+
+    audio {
+      width: 100%;
+      max-width: 700px;
+      display: block;
+      margin-top: 15px;
+    }
+
+    .note {
+      background-color: #f5f5f5;
+      border-left: 5px solid #6f2cff;
+      padding: 15px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h1>HTML5 Audio and Video Demo</h1>
+
+    <p>
+      This page demonstrates native HTML5 audio and video elements using the
+      built-in browser controls.
+    </p>
+
+    <section>
+      <h2>Video Example</h2>
+      <p>This video relates to saving money and budgeting.</p>
+
+      <video controls>
+        <source src="video/budget-video.mp4" type="video/mp4">
+        Your browser does not support the video element.
+      </video>
+    </section>
+
+    <section>
+      <h2>Audio Example</h2>
+      <p>This audio file is a background music example.</p>
+
+      <audio controls>
+        <source src="audio/background-music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </section>
+
+    <div class="note">
+      <p>
+        Both examples use native HTML5 media controls, so users can play, pause,
+        adjust volume, and scrub through the media.
+      </p>
+    </div>
+  </main>
+</body>
+</html>
